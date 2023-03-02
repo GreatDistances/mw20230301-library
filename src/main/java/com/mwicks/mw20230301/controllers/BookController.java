@@ -18,6 +18,7 @@ public class BookController {
     @RequestMapping(value = "", method = {RequestMethod.GET, RequestMethod.POST})
     public String displayAllBooks(Model model) {
         model.addAttribute("library", bookService.getAllBooks());
+        model.addAttribute("title", "Full Library");
         return "books";
     }
 
@@ -42,7 +43,8 @@ public class BookController {
 
     // display add books form
     @GetMapping("add")
-    public String displayAddBookForm() {
+    public String displayAddBookForm(Model model) {
+        model.addAttribute("title", "Add a Book to the Library");
         return "form-add";
     }
 
@@ -57,7 +59,8 @@ public class BookController {
 
     // display delete books form
     @GetMapping("delete")
-    public String displayDeleteBookForm() {
+    public String displayDeleteBookForm(Model model) {
+        model.addAttribute("title", "Remove a Book from the Library");
         return "form-delete";
     }
 
