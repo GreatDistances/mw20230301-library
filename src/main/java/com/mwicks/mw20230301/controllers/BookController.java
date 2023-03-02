@@ -51,9 +51,9 @@ public class BookController {
     // add a book via post
     // TODO add via post
     @PostMapping("add")
-    public String addBook(@RequestParam String bookName, @RequestParam String bookDescription) { // must use same variable name as template
+    public String addBook(@RequestParam String bookName, @RequestParam String bookDescription, @RequestParam String email) { // must use same variable name as template
         System.out.println("addBook trigger controller");
-        bookService.addBook(bookName, bookDescription);
+        bookService.addBook(bookName, bookDescription, email);
         return "redirect:";
     }
 

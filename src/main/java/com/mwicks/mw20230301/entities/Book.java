@@ -6,11 +6,13 @@ public class Book {
     private static int NEXT_ID = 1;
     private String bookName;
     private String bookDescription;
+    private String email;
 
-    public Book(String bookName, String bookDescription) {
+    public Book(String bookName, String bookDescription, String email) {
         this.bookId = NEXT_ID;
         this.bookName = bookName;
         this.bookDescription = bookDescription;
+        this.email = email;
         NEXT_ID++;
     }
 
@@ -32,5 +34,13 @@ public class Book {
 
     public void setBookDescription(String bookDescription) {
         this.bookDescription = bookDescription;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

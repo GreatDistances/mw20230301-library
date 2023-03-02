@@ -11,9 +11,9 @@ import java.util.List;
 public class BookService {
 
     List<Book> library = new ArrayList<>(Arrays.asList(
-        new Book("The Hundred-Foot Journey", "novel"),
-        new Book("Kanji & Kana", "textbook"),
-        new Book("Bible", "historical fiction")
+        new Book("The Hundred-Foot Journey", "novel", "jane@doe.com"),
+        new Book("Kanji & Kana", "textbook", "rei@netzero.com"),
+        new Book("Bible", "historical fiction", "john@baptist.net")
     ));
 
     public List<Book> getAllBooks() {
@@ -31,9 +31,9 @@ public class BookService {
         return library.stream().filter(e -> (e.getBookName().toLowerCase().equals(name.toLowerCase()))).findFirst().get();
     }
 
-    public void addBook(String name, String description) {
+    public void addBook(String name, String description, String email) {
         System.out.println("addBook trigger");
-        library.add(new Book(name, description));
+        library.add(new Book(name, description, email));
     }
 
     public void deleteBook(int bookId) {

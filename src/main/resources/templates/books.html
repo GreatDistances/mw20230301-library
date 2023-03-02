@@ -15,11 +15,13 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Book ID</th>
+                <th>Added By</th>
             </tr>
             <tr th:block th:each="book : ${library}">
                 <td th:text="${book.bookName}"></td>
                 <td th:text="${book.bookDescription}"></td>
                 <td th:text="${book.bookId}"></td>
+                <td th:text="${book.email}"></td>
             </tr>
         </table>
     </th:block>
