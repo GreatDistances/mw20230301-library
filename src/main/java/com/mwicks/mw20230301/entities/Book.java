@@ -5,10 +5,12 @@ public class Book {
     private int bookId;
     private static int NEXT_ID = 1;
     private String bookName;
+    private String bookDescription;
 
-    public Book(String bookName) {
+    public Book(String bookName, String bookDescription) {
         this.bookId = NEXT_ID;
         this.bookName = bookName;
+        this.bookDescription = bookDescription;
         NEXT_ID++;
     }
 
@@ -22,5 +24,13 @@ public class Book {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    public String getBookDescription() {
+        return bookDescription;
+    }
+
+    public void setBookDescription(String bookDescription) {
+        this.bookDescription = bookDescription;
     }
 }

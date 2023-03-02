@@ -49,16 +49,29 @@ public class BookController {
     // add a book via post
     // TODO add via post
     @PostMapping("add")
-    public String addBook(String bookName) { // must use same variable name as template
+    public String addBook(@RequestParam String bookName, @RequestParam String bookDescription) { // must use same variable name as template
         System.out.println("addBook trigger controller");
-        bookService.addBook(bookName);
+        bookService.addBook(bookName, bookDescription);
         return "redirect:";
     }
 
+    // display delete books form
+    @GetMapping("delete")
+    public String displayDeleteBookForm() {
+        return "form-delete";
+    }
+
+    // delete a book via post
+    @PostMapping("delete")
+    public String deleteBook(@RequestParam int bookId) {
+        System.out.println("deleteBook trigger controller");
+        bookService.deleteBook(bookId);
+        return "redirect:";
+    }
+
+
+
     // update a book
     // TODO update
-
-    // delete a book
-    // TODO delete
 
 }
