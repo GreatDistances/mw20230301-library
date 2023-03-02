@@ -43,7 +43,7 @@ public class BookController {
     // display add books form
     @GetMapping("add")
     public String displayAddBookForm() {
-        return "form";
+        return "form-add";
     }
 
     // add a book via post
